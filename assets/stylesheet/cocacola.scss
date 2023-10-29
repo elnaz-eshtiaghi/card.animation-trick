@@ -1,0 +1,242 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: cola;
+    src: url(../font/Loki\ Cola.TTF);
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+section {
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    position: relative;
+
+    >.coca {
+        width: 50px;
+        position: absolute;
+        animation-name: drink;
+        animation-delay: 0s;
+        animation-duration: 20s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-fill-mode: forwards;
+        z-index: 5;
+        &:hover {
+            animation-play-state: paused;
+        }
+
+        >img {
+            width: 100%;
+        }
+    }
+
+    @keyframes drink {
+
+        // from{transform: translateX(0);}
+        // to{transform: translateX(90px);}
+        0% {
+            top: 40%;
+            left: 48%;
+            transform: rotate(0deg);
+            width: 50px;
+        }
+
+        10% {
+            top: 10%;
+            left: 10%;
+            transform: rotate(160deg);
+
+        }
+
+        20% {
+            top: 10%;
+            left: 90%;
+            transform: rotate(-160deg);
+
+
+        }
+
+        30% {
+            top: 78%;
+            left: 90%;
+            transform: rotate(330deg);
+
+        }
+
+        40% {
+            top: 78%;
+            left: 10%;
+            transform: rotate(-330deg);
+
+        }
+
+        50% {
+            top: 40%;
+            left: 48%;
+            transform: rotate(0deg);
+            width: 50px;
+        }
+        95% {
+            top: 40%;
+            left: 60%;
+            transform: rotate(10deg);
+            width: 100px;
+        }
+        99% {
+            top: 40%;
+            left: 48%;
+            transform: rotate(0deg);
+            width: 50px;
+        }
+    }
+
+    >.container {
+        width: 150px;
+        height: 150px;
+        background-color: red;
+        border-radius: 50%;
+        font-family: cola;
+        animation: name duration timing-function delay iteration-count direction fill-mode;
+        animation: grow 20s ease-in-out 0s infinite;
+        position: relative;
+        overflow: hidden;
+
+        >figure {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: grow2 20s ease-in-out 0s infinite;
+            overflow: hidden;
+            
+            >img {
+                width: 100%;
+            }
+        }
+        >p{
+            position: absolute;
+            animation: grow3 20s ease-in-out 0s infinite;
+            color: white;
+        }
+        >div{
+            position: absolute;
+            animation: grow4 20s ease-in-out 0s infinite;
+            opacity: 0.5;
+            >img{
+                width: 100%;
+            }
+        }
+    }
+
+    @keyframes grow {
+        0% {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+        }
+        50% {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+        }
+        
+        95% {
+            width: 400px;
+            height: 300px;
+            border-radius: 50px;
+        }
+        99% {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+        }
+        
+    }
+    @keyframes grow2 {
+        0% {
+            width: 100%;
+            transform: translateY(0);
+        }
+        50% {
+            width: 100%;
+            transform: translateY(0);
+            
+        }
+        
+        95% {
+            width: 30%;
+            transform: translateY(-100px);
+            
+        }
+        99% {
+            width: 100%;
+            transform: translateY(0);
+            
+        }
+        
+    }
+    @keyframes grow3 {
+        0% {
+            transform: translateY(0);
+            font-size: 0px;
+            width: 0%;
+            overflow: hidden;
+           
+        }
+        50% {
+            font-size: 0px;
+            width: 0%;
+            overflow: hidden;
+        }
+        80% {
+            font-size: 0px;
+            width: 0%;
+            overflow: hidden;
+        }
+        95% {
+            transform: translateY(-200px) translateX(20px);
+            font-size: 18px;
+            width: 50%;
+        }
+        99% {
+            font-size: 0px;
+            width: 0%;
+            overflow: hidden;
+        }
+        
+    }
+    @keyframes grow4 {
+        0% {
+            width: 100%;
+            transform: translateY(0);
+        }
+        50% {
+            width: 100%;
+            transform: translateY(0);
+            
+        }
+        
+        95% {
+            width: 100%;
+            transform: translateY(-250px);
+            
+        }
+        99% {
+            width: 100%;
+            transform: translateY(0);
+            
+        }
+        
+    }
+}
